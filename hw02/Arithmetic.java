@@ -11,7 +11,7 @@ public class Arithmetic {
 
     public static void main(String[] args) {
         
-    //number of each item bought
+    //number of each item bought, assign numbers to the variables
     int numPants = 3, numShirts = 2, numBelts = 1;
     
     //the cost of each individual item and the tax rate
@@ -24,6 +24,7 @@ public class Arithmetic {
     double totalCostOfPants = numPants * pantsPrice;
     double totalCostOfShirts = numShirts * shirtPrice;
     double totalCostOfBelts = numBelts * beltPrice;
+    
     //total cost of purchases before sales tax
     double totalCostNonSalesTax = totalCostOfPants + totalCostOfShirts + totalCostOfBelts;
     
@@ -31,6 +32,7 @@ public class Arithmetic {
     double salesTaxOnPants = totalCostOfPants * pasalesTax;
     double salesTaxOnShirts = totalCostOfShirts * pasalesTax;
     double salesTaxOnBelts = totalCostOfBelts * pasalesTax;
+    
     //total sales tax accumlated
     double totalSalesTax = salesTaxOnPants + salesTaxOnShirts + salesTaxOnBelts;
     
@@ -42,8 +44,8 @@ public class Arithmetic {
     System.out.println("Total cost of pants: $" + totalCostOfPants + " and the sales tax on pants: $" + (int)(100*salesTaxOnPants)/100.0);
     System.out.println("Total cost of shirts: $" + totalCostOfShirts + " and the sales tax on shirts: $" + (int)(100*salesTaxOnShirts)/100.0);
     System.out.println("Total cost of belts: $" + totalCostOfBelts + " and the sales tax on belts: $" + (int)(100*salesTaxOnBelts)/100.0);
-    System.out.println("");
-    System.out.println("");
+    System.out.println("");     //skip line
+    System.out.println("");     //skip line
     System.out.println("The total cost of the purchases without sales tax: $" + totalCostNonSalesTax);
     System.out.println("The total cost of the purchases with sales tax: $" + (int)(100*totalCostWithSalesTax)/100.0);
     System.out.println("The total sales tax: $" + (int)(100*totalSalesTax)/100.0);
