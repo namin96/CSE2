@@ -26,8 +26,8 @@ public class Cyclometer {
     double distanceTrip1, distanceTrip2, totalDistance; //declare distanceTrip1, distanceTrip2, and totalDistance as double data types
     
     //print data to screen
-    System.out.println("Trip 1 took " + (secsTrip1/secondsPerMinute) + " minutes and had " + countsTrip1 + "counts.");
-    System.out.println("Trip 2 took " + (secsTrip2/secondsPerMinute) + " minutes and had " + countsTrip2 + "counts.");
+    System.out.println("Trip 1 took " + (secsTrip1/secondsPerMinute) + " minutes and had " + countsTrip1 + " counts.");
+    System.out.println("Trip 2 took " + (secsTrip2/secondsPerMinute) + " minutes and had " + countsTrip2 + " counts.");
     
     //calculate distance of both trips
     distanceTrip1 = countsTrip1*wheelDiameter*PI; //distance in inches(for each count, a rotation of the wheel travels
