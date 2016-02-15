@@ -20,7 +20,7 @@ public class Convert {
         double meters = input.nextDouble();
         
         //convert meters to inches
-        double inches = meters * 39.3701;
+        double inches = (int)((meters * 39.3701*100)/100);
         
         //display the measurement in inches on screen
         System.out.println(meters + " meters is " + inches + " inches");
