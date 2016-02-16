@@ -20,6 +20,8 @@ public class Convert {
         double meters = input.nextDouble();
         
         //convert meters to inches
+        //multiply result by 100 and then divide by 100 to truncate decimal
+        //cast the calculation to an integer 
         double inches = (int)((meters * 39.3701*100)/100);
         
         //display the measurement in inches on screen
