@@ -31,21 +31,13 @@ public class Twisty{
                 input.next();
             }
         }*/
-        
-        if(length > 80){   //check to see if width and length are appropriate
+        while(length > 80 || width > length){
             System.out.print("Input a length less than 80 only: ");
             length = input.nextInt();
-        }
-        else if(width > length){
             System.out.print("Input your desired width which is less than the length: ");
             width = input.nextInt();
         }
-        else if(length > 80 && width > length){
-            System.out.print("Input a length less than 80 only: ");
-            length = input.nextInt();
-            System.out.print("Input your desired width which is less than the length: ");
-            width = input.nextInt();}
-        }
+       
         
         
         
@@ -56,8 +48,12 @@ public class Twisty{
         int j = 0;
         
         
+        
+        
+        
         for(i = 0; i < width; i++){     //for loop to control how many lines are printed
         	
+            
             
             for(j = 0; j < length; j++){    //inner for loop controls how many characters and what characters are printed on each line
                 
