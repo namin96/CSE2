@@ -2,6 +2,11 @@
 Neal Amin
 HW 12
 04/15/2016
+This program will first ask user to enter 15 integers between 0 and 100 only. Then these integers
+will be sorted in an array and then the user will be ask to search for a grade which will be done using 
+binary search and linear search. Linear search will use the scrambled array whereas binary search will use
+the sorted array. The number of iterations will be printed in addition to if the grade 
+is found. 
 */
 
 import java.util.Scanner;
@@ -19,13 +24,13 @@ public class CSE2Linear{
         //ask user to enter integers upto the length of the array
         for (int i = 0; i < finalGrades.length; i++){
             //check input is an integer
-            while(!input.hasNextInt()){
+            while(!input.hasNextInt()){     //only enter integers
                 System.out.print("Please enter integers only: ");
                 input.next();
                 }
                
                 finalGrades[i] = input.nextInt();
-                if(finalGrades[i] > 100 || finalGrades[i] < 0){
+                if(finalGrades[i] > 100 || finalGrades[i] < 0){     //check if integers fall between 0 and 100
                 System.out.print("Please enter integers between 0 and 100 only: ");
                 finalGrades[i] = input.nextInt();
             }
@@ -72,20 +77,20 @@ public class CSE2Linear{
     }
     public static void selectionSort(int [] list){
         for (int i = 0; i < list.length - 1; i++){
+            //sorting the array
+            int minVal = list[i];
+            int minValIndex = i;
             
-            int currentMin = list[i];
-            int currentMinIndex = i;
-            
-        for (int j = i + 1; j < list.length; j++){
-            if(currentMin > list[j]){
-                currentMin = list[j];
-                currentMinIndex = j;
+        for (int j = i + 1; j < list.length; j++){  //swap the elements within the array
+            if(minVal > list[j]){
+                minVal = list[j];
+                minValIndex = j;
             }
         }
         
-        if (currentMinIndex != i){
-            list[currentMinIndex] = list[i];
-            list[i] = currentMin;
+        if (minValIndex != i){          
+            list[minValIndex] = list[i];
+            list[i] = minVal;
         }
         }
     }
@@ -96,19 +101,19 @@ public class CSE2Linear{
         while(high >= low){
             
             int mid = (low + high) / 2;
-            if(key < list[mid]){
-                high = mid - 1;
-                count++;
+            if(key < list[mid]){    //if user search is less than the mid value of array
+                high = mid - 1;     //reset high value
+                count++;            //increment count
             }
-            else if(key == list[mid]){
+            else if(key == list[mid]){      //if user search equals element within array
                 System.out.println(key + " was found in the list with " + count + " iterations.");
-                break;
-            }   
-            else{
-                low = mid + 1;
+                break;                  //end of search and break
+            }       
+            else{                   
+                low = mid + 1;      
                 count++;
             }
-            if(high < low){
+            if(high < low){         //if user search is not found
                 System.out.println(key + " was not found in the list with " + count + " iterations.");
                 break;
             }
@@ -116,7 +121,8 @@ public class CSE2Linear{
     }
     
     public static void randomScramble(int [] list){
-        
+        //scramble the array
+        //swap array elements
         for(int i = 0; i < list.length; i++){
             int j = (int)(Math.random() * list.length);
             int k = list[i];
@@ -129,13 +135,13 @@ public class CSE2Linear{
         
         int i = 0;
         for(i = 0; i < list.length; i++){
-            if (key == list[i]){
+            if (key == list[i]){        //if user search matches the element in the array
             System.out.println(key + " was found in the list with " + i + " iterations.");
             break;
             }
             
         }
-           if(i == list.length){
+           if(i == list.length){        //if user search is not found
                System.out.println(key + " was not found in the list with " + i + " iterations.");
            } 
             

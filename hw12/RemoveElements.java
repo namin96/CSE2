@@ -67,16 +67,24 @@ public class RemoveElements{
         
         if(target == list[i]){
             count++;
-            list[i] = list[i+1];
+            //list[i] = list[i+1];
          }
 
-    else{
+    /*else{
         list[i] = list[i];
+    }*/
     }
+    int [] list1 = new int[list.length - count];
+    for(int i = 0; i < list.length - count; i++){
+        if(list[i] == target){
+        list1[i] = list[i+1];
+        //list1[i] = list[i];
     }
-    int [] newlist2 = new int[list.length - count];
-    //newlist2 = [listlist.length - count];
-    return newlist2;
+        else{
+            list1[i] = list[i];
+        }
+    }
+    return list1;
  }
  
   public static String listArray(int num[]){
