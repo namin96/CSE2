@@ -1,3 +1,15 @@
+/*Neal Amin
+CSE2 Program 2
+04/19/2016
+
+This program will use methods to show modified arrays depending on user input. One of the methods will
+remove a certain index of an array while another method will remove certain elements within an array 
+all based on user input.
+
+*/
+
+
+
 import java.util.Scanner;
 
 public class RemoveElements{
@@ -37,54 +49,50 @@ public class RemoveElements{
 	}while(answer.equals("Y") || answer.equals("y"));
   }
   
-  public static int [] randomInput(){
-      int [] list = new int[10];
-      for(int i = 0; i < list.length; i++){
+  public static int [] randomInput(){           
+      int [] list = new int[10];                //size 10 integer array
+      for(int i = 0; i < list.length; i++){     //fill the array with random integers generated from 0 to 9
           list[i] = (int)(Math.random()*9) + 0;
       }
-      return list;
+      return list;                              //return that array
   }
   
   public static int [] delete(int list[], int pos){
-      int [] newlist = new int[list.length-1];
-      for(int i = 0; i < list.length -1; i++){
+      int [] newlist = new int[list.length-1];      //intialize and declare new array to hold one less member
+      for(int i = 0; i < list.length -1; i++){      //for loop to count up to list.length - 1
           
-          if(i >= pos){
-              newlist[i] = list[i+1];
+          if(i >= pos){                             //when i is greater than or equal to user index
+              newlist[i] = list[i+1];               //elements will be shifted left
               
-          }
-          else{
+          } 
+          else{                                     //copying regular array elements
             newlist[i] = list[i];
           }
       }
-      return newlist;
+      return newlist;                               //return the new array
   }
  
  public static int [] remove(int list[], int target){
-    //int [] newlist2 = new int[list.length];
+    //intialize count to keep track of how many target numbers are present
     int count = 0;
     for(int i = 0; i < list.length; i++){
         
-        if(target == list[i]){
-            count++;
-            //list[i] = list[i+1];
+        if(list[i] == target){      //if the element within an array matches the target
+            count++;                //increment count
+            
          }
 
-    /*else{
-        list[i] = list[i];
-    }*/
     }
-    int [] list1 = new int[list.length - count];
-    for(int i = 0; i < list.length - count; i++){
-        if(list[i] == target){
-        list1[i] = list[i+1];
-        //list1[i] = list[i];
+    int [] list1 = new int[list.length - count];        //new array 
+    
+    int j = 0;      //initialize j to keep track of indicies in the new array
+    for(int i = 0; i < list.length; i++){
+        if(list[i] != target){      //if the original array element is not equal to target
+        list1[j] = list[i];         //new list element will be equal to original list element
+        j++;                        //increment j
     }
-        else{
-            list1[i] = list[i];
-        }
     }
-    return list1;
+    return list1;                   //return the new array
  }
  
   public static String listArray(int num[]){
